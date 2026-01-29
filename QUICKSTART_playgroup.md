@@ -39,5 +39,8 @@ IF YOU HAVE PROBLEMS WITH THE ABOVE, MESSAGE IN THE PLAYGROUP SLACK BEFOREHAND.
 
 The GPT2 model is a large binary, it'll take an age to download at the venue, you can force an earlier download at home of the circa 0.5GB model. This is not required but we'll do it in the room, so I hope some of you have it.
 
+```
+python train.py config/finetune_shakespeare.py
+```
 
 /.cache/huggingface/hub/models--gpt2/blobs
