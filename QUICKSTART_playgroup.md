@@ -20,7 +20,7 @@ export WANDB_API_KEY=wandb_v1_...
 Note if the following feels weird, read the original `README.md` file, it walks through this with more detail, I've compressed the critical bits that 'should just work'.
 
 ```
-python data/shakespeare/prepare.py # prepares some input data
+python data/shakespeare_char/prepare.py # prepares some input data
 python train.py config/train_shakespeare_char.py 
 # note if you have CUDA setup, this 'just works'
 # if you're on a mac, add the mps argument
