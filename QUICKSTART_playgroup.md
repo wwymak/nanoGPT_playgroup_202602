@@ -51,3 +51,5 @@ Just so you know, on my machine `pytorch` caches this in `/.cache/huggingface/hu
 
 * https://raw.githubusercontent.com/tansaku/comedy_playgroup/refs/heads/main/data/expunations_annotated_full.json
 * Ian's phrack download (via dropbox perhaps? 57mb)
+  * `python sample.py --out_dir=out-phrack-char --start="main( "`
+* python - start with 'def lev' or 'hello'
