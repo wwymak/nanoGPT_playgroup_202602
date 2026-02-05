@@ -42,15 +42,31 @@ IF YOU HAVE PROBLEMS WITH THE ABOVE, MESSAGE IN THE PLAYGROUP SLACK BEFOREHAND.
 The GPT2 model is a large binary, it'll take an age to download at the venue, you can force an earlier download at home of the circa 0.5GB model. This is not required but we'll do it in the room, so I hope some of you have it.
 
 ```
-python data/shakespeare/prepare.py 
+python data/shakespeare/prepare.py  # I think this uses the GPT BPE tokeniser, not the unigram tokeniser...
 python train.py config/finetune_shakespeare.py
 ```
 
 Just so you know, on my machine `pytorch` caches this in `/.cache/huggingface/hub/models--gpt2/blobs` (at 0.5GB), so you only need to do the download once.
 
+## Lambda.ai
+
+```
+# Ian needs your ssh key to add it to the account, it is tied to a particular machine
+# after ssh:
+git clone https://github.com/ianozsvald/nanoGPT_playgroup_202602.git
+python -m venv .venv # needed! else we inherit an out of date ubuntu python library set
+. .venv/bin/activate
+cd nanoGPT_playgroup_202602/
+pip install torch numpy transformers datasets tiktoken wandb tqdm
+python data/shakespeare/prepare.py
+python train.py config/finetune_shakespeare.py
+# 10 seconds later...
+python sample.py --out_dir="out-shakespeare" # maybe add the --start="" param too?
+```
+
 ## Additional data
 
 * https://raw.githubusercontent.com/tansaku/comedy_playgroup/refs/heads/main/data/expunations_annotated_full.json
-* Ian's phrack download (via dropbox perhaps? 57mb)
+* Ian's phrack download (via dropbox perhaps? 57mb) - note you need to download the zip, see `prepare.py
   * `python sample.py --out_dir=out-phrack-char --start="main( "`
 * python - start with 'def lev' or 'hello'
