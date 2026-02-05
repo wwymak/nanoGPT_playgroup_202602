@@ -8,7 +8,7 @@ Make a fresh Python env (e.g. `python -m venv .venv` `. .venv/bin/activate`), ma
 pip install torch numpy transformers datasets tiktoken wandb tqdm
 ```
 
-OPTIONAL but recommended - setup a https://wandb.ai/ account (Weights and Bias) and get an API key and then
+OPTIONAL but recommended - setup a https://wandb.ai/ account (Weights and Bias) and get an API key, choose 'Models' not Weave when signing up, then:
 
 ```
 export WANDB_API_KEY=wandb_v1_...
@@ -42,6 +42,7 @@ IF YOU HAVE PROBLEMS WITH THE ABOVE, MESSAGE IN THE PLAYGROUP SLACK BEFOREHAND.
 The GPT2 model is a large binary, it'll take an age to download at the venue, you can force an earlier download at home of the circa 0.5GB model. This is not required but we'll do it in the room, so I hope some of you have it.
 
 ```
+python data/shakespeare/prepare.py 
 python train.py config/finetune_shakespeare.py
 ```
 
