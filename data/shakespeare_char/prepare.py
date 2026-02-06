@@ -17,7 +17,7 @@ if not os.path.exists(input_file_path):
         f.write(requests.get(data_url).text)
 
 with open(input_file_path, 'r') as f:
-    data = f.read()
+    data = f.read().lower()
 print(f"length of dataset in characters: {len(data):,}")
 
 # get all the unique characters that occur in this text
@@ -50,6 +50,7 @@ train_ids = np.array(train_ids, dtype=np.uint16)
 val_ids = np.array(val_ids, dtype=np.uint16)
 train_ids.tofile(os.path.join(os.path.dirname(__file__), 'train.bin'))
 val_ids.tofile(os.path.join(os.path.dirname(__file__), 'val.bin'))
+
 
 # save the meta information as well, to help us encode/decode later
 meta = {

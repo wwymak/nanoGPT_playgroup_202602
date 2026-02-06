@@ -76,3 +76,5 @@ python sample.py --out_dir="out-shakespeare" # maybe add the --start="" param to
 * Ian's phrack download (via dropbox perhaps? 57mb) - note you need to download the zip, see `prepare.py
   * `python sample.py --out_dir=out-phrack-char --start="main( "`
 * python - start with 'def lev' or 'hello'
+* math_data_char - simple multiplication
+  * `python sample.py --out_dir=out-math-data-char --start="3 * 5 "` (note can't add equals symbol, it borks!)
